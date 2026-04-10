@@ -18,50 +18,31 @@
             --text-dim: #94a3b8;
         }
 
-        /* Kayma Engelleyici Ayarlar */
+        /* Scroll fix for desktop */
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Masaüstünde kaymayı tamamen engeller */
+            overflow: hidden;
             background-color: var(--bg);
         }
 
         body {
             font-family: 'Inter', sans-serif;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 40%);
             color: var(--text-main);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* İçeriği dikeyde tam ortalar */
-            position: relative;
+            justify-content: center;
+            min-height: 100vh;
         }
 
-        /* Hareketli Arka Plan (Yıldızlar) */
-        .stars {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%);
-        }
-
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            opacity: 0;
-            animation: twinkle var(--d) infinite ease-in-out;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0; transform: scale(0.5); }
-            50% { opacity: 0.7; transform: scale(1.2); }
-        }
-
-        /* Animasyonlu Header */
         header { 
+            padding: 2rem; /* Reduced padding to fix scroll */
             text-align: center; 
-            margin-bottom: 2rem;
             animation: fadeInDown 0.8s ease-out; 
         }
 
@@ -88,15 +69,16 @@
             margin-bottom: 1rem; 
         }
 
-        p.hero-text { font-size: 1.1rem; color: var(--text-dim); max-width: 500px; margin: 0.5rem auto 0 auto; }
+        p.hero-text { font-size: 1.25rem; color: var(--text-dim); max-width: 600px; margin: 0.5rem auto 0 auto; }
 
         .container { 
-            max-width: 800px; 
+            max-width: 900px; 
             width: 90%; 
-            animation: fadeInUp 1s ease-out;
+            margin-top: 1rem;
+            padding-bottom: 0; /* Removed large padding to fix scroll */
         }
 
-        .section-title { font-family: 'Outfit', sans-serif; font-size: 1.2rem; margin-bottom: 1.5rem; border-left: 4px solid var(--primary); padding-left: 1rem; color: #fff; }
+        .section-title { font-family: 'Outfit', sans-serif; font-size: 1.5rem; margin-bottom: 2rem; border-left: 4px solid var(--primary); padding-left: 1rem; }
         
         .card {
             background: var(--card-bg);
@@ -111,73 +93,71 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .card:hover { transform: translateY(-8px); border-color: rgba(99, 102, 241, 0.4); box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+        .card:hover { transform: scale(1.02); border-color: rgba(99, 102, 241, 0.4); box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
         
         .app-icon { 
-            width: 100px; height: 100px; 
+            width: 120px; height: 120px; 
             background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); 
-            border-radius: 24px; 
+            border-radius: 28px; 
             display: flex; align-items: center; justify-content: center; 
-            font-size: 3rem; 
+            font-size: 3.5rem; 
             box-shadow: 0 15px 30px rgba(79, 70, 229, 0.4); 
         }
 
-        .app-info h2 { font-family: 'Outfit', sans-serif; margin: 0; font-size: 2rem; font-weight: 700; }
-        .app-info p { color: var(--text-dim); font-size: 1rem; margin: 0.5rem 0 1.5rem 0; max-width: 400px; }
+        .app-info h2 { font-family: 'Outfit', sans-serif; margin: 0; font-size: 2.2rem; font-weight: 700; }
+        .app-info p { color: var(--text-dim); font-size: 1.1rem; margin: 0.75rem 0 2rem 0; max-width: 450px; }
         
         .btn {
             display: inline-flex;
+            align-items: center;
             background: #fff;
             color: #000;
-            padding: 0.8rem 1.6rem;
-            border-radius: 14px;
+            padding: 1rem 2rem;
+            border-radius: 16px;
             text-decoration: none;
             font-weight: 700;
             transition: 0.3s;
         }
 
-        .btn:hover { background: var(--primary); color: #fff; transform: scale(1.05); }
+        .btn:hover { background: var(--primary); color: #fff; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4); }
         
-        footer { margin-top: 3rem; text-align: center; width: 100%; }
+        footer { 
+            margin-top: 3rem; 
+            padding: 2rem; 
+            text-align: center; 
+            width: 100%; 
+        }
+
         .footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 1rem; }
-        .footer-links a { color: var(--text-dim); text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: 0.2s; }
+        .footer-links a { color: var(--text-dim); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: 0.2s; }
         .footer-links a:hover { color: #fff; }
 
-        /* Keyframes */
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
 
         @media (max-width: 768px) { 
             .card { flex-direction: column; text-align: center; padding: 2rem; } 
             h1 { font-size: 3rem; }
-            html, body { overflow: auto; } /* Mobilde kaymaya izin ver */
+            /* Allow scrolling on mobile if content is larger than screen */
+            html, body { overflow: auto; height: auto; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Animasyonlu Yıldızlar -->
-    <div class="stars">
-        <div class="star" style="top:15%; left:25%; width:2px; height:2px; --d:3s;"></div>
-        <div class="star" style="top:40%; left:85%; width:3px; height:3px; --d:5s;"></div>
-        <div class="star" style="top:70%; left:10%; width:1px; height:1px; --d:4s;"></div>
-        <div class="star" style="top:85%; left:65%; width:2px; height:2px; --d:6s;"></div>
-        <div class="star" style="top:20%; left:75%; width:2px; height:2px; --d:4.5s;"></div>
-        <div class="star" style="top:60%; left:45%; width:1px; height:1px; --d:3.5s;"></div>
-    </div>
-
     <header>
         <div class="dev-badge">Official Portfolio</div>
         <h1>Aykutech Dev.</h1>
-        <p class="hero-text">Modern tools for digital precision.</p>
+        <p class="hero-text">Delivering modern, fast, and practical mobile utilities.</p>
     </header>
 
     <div class="container">
+        <h3 class="section-title">Latest Release</h3>
+        
         <div class="card">
             <div class="app-icon">🔢</div>
             <div class="app-info">
                 <h2>Modern Calculator</h2>
-                <p>A sleek, fast, and high-precision tool for your daily calculations.</p>
+                <p>Features a sleek design, lightning-fast calculations, and a built-in unit converter for daily tasks.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.aykutech.calc" class="btn" target="_blank">View on Google Play</a>
             </div>
         </div>
@@ -187,7 +167,7 @@
                 <a href="/privacy.html">Privacy Policy</a>
                 <a href="mailto:aykutechdev@gmail.com">Support</a>
             </div>
-            <p style="color: #4b5563; font-size: 0.8rem;">&copy; 2024 Aykutech Dev.</p>
+            <p style="color: #4b5563; font-size: 0.85rem;">&copy; 2024 Aykutech Dev. Crafted with precision.</p>
         </footer>
     </div>
 
