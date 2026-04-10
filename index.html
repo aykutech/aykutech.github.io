@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aykutech Dev. | High-Quality Mobile Apps</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --bg: #030712;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 40%);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 6rem 2rem 3rem 2rem;
+            text-align: center;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -2px;
+        }
+
+        .dev-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        p.hero-text {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 1.5rem auto 0 auto;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 90%;
+            margin-top: 2rem;
+            padding-bottom: 6rem;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .app-icon-wrapper {
+            position: relative;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            box-shadow: 0 15px 30px rgba(79, 70, 229, 0.4);
+        }
+
+        .app-info h2 {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .app-info p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            margin: 0.75rem 0 2rem 0;
+            max-width: 450px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            background: #fff;
+            color: #000;
+            padding: 1rem 2rem;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            width: 100%;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .card { flex-direction: column; text-align: center; padding: 2rem; }
+            h1 { font-size: 3rem; }
+            .app-info p { margin-inline: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="dev-badge">Official Website</div>
+        <h1>Aykutech Dev.</h1>
+        <p class="hero-text">Crafting powerful and minimalist mobile experiences for digital convenience.</p>
+    </header>
+
+    <div class="container">
+        <h3 class="section-title">Featured Apps</h3>
+        
+        <div class="card">
+            <div class="app-icon-wrapper">
+                <div class="app-icon">🔢</div>
+            </div>
+            <div class="app-info">
+                <h2>Calculator</h2>
+                <p>A smart, high-precision tool designed for seamless calculations and modern usability.</p>
+                <a href="#" class="btn">Get it on Play Store</a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/app-ads.txt">App-Ads</a>
+                <a href="#">Privacy Policy</a>
+                <a href="mailto:contact@aykutech.com">Support</a>
+            </div>
+            <p style="color: #4b5563; font-size: 0.85rem;">&copy; 2024 Aykutech Dev. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
