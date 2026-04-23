@@ -28,7 +28,6 @@
             overflow-x: hidden;
             background-color: var(--bg);
             width: 100%;
-            /* Kaydırma çubuğunu gizle */
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
@@ -51,23 +50,23 @@
 
         /* Sabit Header Ayarı */
         header { 
-            position: sticky;
+            position: sticky; /* Sabit tutar */
             top: 0;
-            z-index: 100; /* Kartların üstünde kalması için */
-            padding: 2.5rem 1rem 1.5rem 1rem;
+            z-index: 100; /* Kartların üstünde kalmasını sağlar */
+            padding: 1.5rem 1rem;
             text-align: center; 
             width: 100%;
-            /* Koyu cam efekti (Header arkasından geçenler hafif görünsün diye) */
-            background: rgba(3, 7, 18, 0.9); /* Koyu arka plan */
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            /* Cam Efekti: Arka planla aynı renk ama hafif şeffaf */
+            background: rgba(3, 7, 18, 0.85); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             animation: fadeInDown 0.8s ease-out; 
         }
 
         h1 { 
             font-family: 'Outfit', sans-serif; 
-            font-size: clamp(2.2rem, 7vw, 3.5rem); 
+            font-size: clamp(2rem, 7vw, 3.5rem); 
             font-weight: 800; 
             margin: 0 auto; 
             background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); 
@@ -85,19 +84,20 @@
             font-weight: 600; 
             text-transform: uppercase; 
             letter-spacing: 1px; 
-            margin-bottom: 0.8rem; 
+            margin-bottom: 0.5rem; 
         }
 
         .container { 
             max-width: 1100px; 
             width: 90%; 
-            margin: 2rem auto;
+            margin: 1rem auto 0 auto;
             display: flex;
             flex-direction: row; 
             flex-wrap: wrap; 
             justify-content: center;
             gap: 2rem;
-            padding-bottom: 4rem; /* Footer ile çakışmasın */
+            flex-grow: 1;
+            padding-bottom: 3rem;
         }
 
         .section-title { 
@@ -107,7 +107,6 @@
             border-left: 4px solid var(--primary); 
             padding-left: 1rem;
             width: 100%; 
-            color: var(--text-dim);
         }
         
         .card {
@@ -125,10 +124,9 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             flex: 1 1 400px; 
             max-width: 500px;
-            z-index: 10; /* Header'ın altında kalacak */
         }
 
-        .card:hover { transform: translateY(-8px); border-color: rgba(99, 102, 241, 0.4); box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+        .card:hover { transform: translateY(-10px); border-color: rgba(99, 102, 241, 0.4); box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
         
         .app-icon { 
             width: 90px; height: 90px; 
@@ -139,7 +137,7 @@
             box-shadow: 0 15px 30px rgba(79, 70, 229, 0.4); 
         }
 
-        .app-info h2 { font-family: 'Outfit', sans-serif; margin: 0; font-size: 1.5rem; font-weight: 700; }
+        .app-info h2 { font-family: 'Outfit', sans-serif; margin: 0; font-size: 1.6rem; font-weight: 700; }
         .app-info p { color: var(--text-dim); font-size: 0.95rem; margin: 0.5rem 0 1.5rem 0; line-height: 1.6; min-height: 3em; }
         
         .btn {
@@ -157,12 +155,10 @@
         .btn:hover { background: var(--primary); color: #fff; }
         
         footer { 
-            margin-top: auto; 
-            padding: 2rem 1rem; 
+            margin-top: 2rem; 
+            padding: 1.5rem 1rem; 
             text-align: center; 
             width: 100%;
-            background: rgba(3, 7, 18, 0.9); /* Koyu arka plan */
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 0.8rem; }
@@ -171,13 +167,12 @@
 
         .copyright { color: #4b5563; font-size: 0.8rem; }
 
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
 
         @media (max-width: 850px) { 
-            .container { flex-direction: column; align-items: center; padding-top: 1rem; }
+            .container { flex-direction: column; align-items: center; }
             .card { width: 100%; max-width: 100%; }
-            header { padding: 1.5rem 1rem 1rem 1rem; }
-            /* Mobilde içerik çoksa kaydırmaya izin ver ama çubuğu gösterme */
+            header { padding: 1.5rem 1rem; }
             html, body { overflow-y: auto; }
         }
     </style>
