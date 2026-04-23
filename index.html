@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="KV69AWhHpF2dVc3_v7yLgQXGjtllntoiwDXkDtA3hr4" /> 
     
     <title>Aykutech Dev. | High-Precision Mobile Apps</title>
@@ -41,13 +40,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* Centers everything vertically */
             min-height: 100vh;
             padding: 2rem 0;
         }
 
         header { 
-            padding: 1rem;
+            padding: 2rem 1rem;
             text-align: center; 
             animation: fadeInDown 0.8s ease-out; 
             width: 100%;
@@ -92,16 +90,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex-grow: 0;
+            gap: 2rem;
+            flex-grow: 1;
         }
 
         .section-title { 
             font-family: 'Outfit', sans-serif; 
             font-size: 1.2rem; 
-            margin-bottom: 2rem; 
+            margin-bottom: 0.5rem; 
             border-left: 4px solid var(--primary); 
             padding-left: 1rem;
             width: 100%;
+            align-self: flex-start;
         }
         
         .card {
@@ -130,8 +130,9 @@
             box-shadow: 0 15px 30px rgba(79, 70, 229, 0.4); 
         }
 
+        .app-info { flex-grow: 1; }
         .app-info h2 { font-family: 'Outfit', sans-serif; margin: 0; font-size: 1.8rem; font-weight: 700; }
-        .app-info p { color: var(--text-dim); font-size: 1rem; margin: 0.5rem 0 1.5rem 0; }
+        .app-info p { color: var(--text-dim); font-size: 1rem; margin: 0.5rem 0 1.5rem 0; line-height: 1.5; }
         
         .btn {
             display: inline-flex;
@@ -147,16 +148,11 @@
 
         .btn:hover { background: var(--primary); color: #fff; transform: translateY(-2px); }
         
-        /* Perfectly Centered Footer */
         footer { 
             margin-top: 4rem; 
             padding: 2rem 1rem; 
             text-align: center; 
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
 
         .footer-links { 
@@ -166,7 +162,6 @@
             align-items: center;
             margin-bottom: 1rem; 
             flex-wrap: wrap; 
-            width: 100%;
         }
 
         .footer-links a { 
@@ -183,8 +178,6 @@
             color: #4b5563; 
             font-size: 0.85rem;
             margin: 0;
-            width: 100%;
-            text-align: center;
         }
 
         @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
@@ -192,8 +185,8 @@
         @media (max-width: 600px) { 
             .card { flex-direction: column; text-align: center; padding: 2rem; gap: 1.5rem; } 
             .app-icon { width: 80px; height: 80px; font-size: 2.5rem; }
-            header { padding: 2rem 1rem 1rem 1rem; }
-            body { justify-content: flex-start; padding-top: 4rem; } 
+            header { padding: 3rem 1rem 1rem 1rem; }
+            body { justify-content: flex-start; } 
             html, body { overflow-y: auto; height: auto; }
             footer { margin-top: 2rem; }
         }
@@ -208,13 +201,22 @@
     </header>
 
     <div class="container">
-        <h3 class="section-title">Latest Release</h3>
+        <h3 class="section-title">Latest Releases</h3>
         
+        <div class="card">
+            <div class="app-icon">📚</div>
+            <div class="app-info">
+                <h2>Digital Library Pro</h2>
+                <p>The ultimate media tracker. Organize your personal collection of books, movies, and series with cloud backup and smart ratings.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.aykutech.library" class="btn" target="_blank">View on Google Play</a>
+            </div>
+        </div>
+
         <div class="card">
             <div class="app-icon">🔢</div>
             <div class="app-info">
                 <h2>Modern Calculator</h2>
-                <p>Pure design, lightning-fast results, and an advanced unit converter in one smart app.</p>
+                <p>Pure design, lightning-fast results, and an advanced unit converter in one smart app for daily precision.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.aykutech.calc" class="btn" target="_blank">View on Google Play</a>
             </div>
         </div>
@@ -224,7 +226,7 @@
                 <a href="/privacy.html">Privacy Policy</a>
                 <a href="mailto:aykutechdev@gmail.com">Support</a>
             </div>
-            <p class="copyright">&copy; 2024 Aykutech Dev. Crafted with precision.</p>
+            <p class="copyright">&copy; 2026 Aykutech Dev. Crafted with precision.</p>
         </footer>
     </div>
 
